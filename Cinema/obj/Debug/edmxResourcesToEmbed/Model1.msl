@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище CinemaModelContainer" CdmEntityContainer="CinemaEntities">
+    <EntitySetMapping Name="Cinemas">
+      <EntityTypeMapping TypeName="CinemaModel.Cinemas">
+        <MappingFragment StoreEntitySet="Cinemas">
+          <ScalarProperty Name="Cinema_id" ColumnName="Cinema_id" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Films">
+      <EntityTypeMapping TypeName="CinemaModel.Films">
+        <MappingFragment StoreEntitySet="Films">
+          <ScalarProperty Name="Film_id" ColumnName="Film_id" />
+          <ScalarProperty Name="Film_name" ColumnName="Film_name" />
+          <ScalarProperty Name="Date_release" ColumnName="Date_release" />
+          <ScalarProperty Name="Date_end" ColumnName="Date_end" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Poster" ColumnName="Poster" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Halls">
+      <EntityTypeMapping TypeName="CinemaModel.Halls">
+        <MappingFragment StoreEntitySet="Halls">
+          <ScalarProperty Name="Hall_id" ColumnName="Hall_id" />
+          <ScalarProperty Name="Hall_number" ColumnName="Hall_number" />
+          <ScalarProperty Name="Cinema" ColumnName="Cinema" />
+          <ScalarProperty Name="Type_hall" ColumnName="Type_hall" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Places">
+      <EntityTypeMapping TypeName="CinemaModel.Places">
+        <MappingFragment StoreEntitySet="Places">
+          <ScalarProperty Name="Place_id" ColumnName="Place_id" />
+          <ScalarProperty Name="Place_number" ColumnName="Place_number" />
+          <ScalarProperty Name="Hall" ColumnName="Hall" />
+          <ScalarProperty Name="Type_place" ColumnName="Type_place" />
+          <ScalarProperty Name="Row_number" ColumnName="Row_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchases">
+      <EntityTypeMapping TypeName="CinemaModel.Purchases">
+        <MappingFragment StoreEntitySet="Purchases">
+          <ScalarProperty Name="Purchase_id" ColumnName="Purchase_id" />
+          <ScalarProperty Name="Buyer" ColumnName="Buyer" />
+          <ScalarProperty Name="Purchase_date" ColumnName="Purchase_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="CinemaModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Role_name" ColumnName="Role_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sessions">
+      <EntityTypeMapping TypeName="CinemaModel.Sessions">
+        <MappingFragment StoreEntitySet="Sessions">
+          <ScalarProperty Name="Session_id" ColumnName="Session_id" />
+          <ScalarProperty Name="Session_time" ColumnName="Session_time" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Film" ColumnName="Film" />
+          <ScalarProperty Name="Hall" ColumnName="Hall" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tickets">
+      <EntityTypeMapping TypeName="CinemaModel.Tickets">
+        <MappingFragment StoreEntitySet="Tickets">
+          <ScalarProperty Name="Ticket_id" ColumnName="Ticket_id" />
+          <ScalarProperty Name="Session" ColumnName="Session" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type_hall">
+      <EntityTypeMapping TypeName="CinemaModel.Type_hall">
+        <MappingFragment StoreEntitySet="Type_hall">
+          <ScalarProperty Name="Type_hall_id" ColumnName="Type_hall_id" />
+          <ScalarProperty Name="Type_hall_name" ColumnName="Type_hall_name" />
+          <ScalarProperty Name="Number_seats" ColumnName="Number_seats" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type_place">
+      <EntityTypeMapping TypeName="CinemaModel.Type_place">
+        <MappingFragment StoreEntitySet="Type_place">
+          <ScalarProperty Name="Type_place_id" ColumnName="Type_place_id" />
+          <ScalarProperty Name="Type_place_name" ColumnName="Type_place_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CinemaModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Last_name" ColumnName="Last_name" />
+          <ScalarProperty Name="First_name" ColumnName="First_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Purchase_details" TypeName="CinemaModel.Purchase_details" StoreEntitySet="Purchase_details">
+      <EndProperty Name="Purchases">
+        <ScalarProperty Name="Purchase_id" ColumnName="Purchase" />
+      </EndProperty>
+      <EndProperty Name="Tickets">
+        <ScalarProperty Name="Ticket_id" ColumnName="Ticket" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="GetFreeHalls" FunctionName="Хранилище CinemaModel.GetFreeHalls">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CinemaModel.GetFreeHalls_Result">
+          <ScalarProperty Name="Hall_id" ColumnName="Hall_id" />
+          <ScalarProperty Name="Hall_number" ColumnName="Hall_number" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPlaces" FunctionName="Хранилище CinemaModel.GetPlaces">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CinemaModel.GetPlaces_Result">
+          <ScalarProperty Name="Ticket_id" ColumnName="Ticket_id" />
+          <ScalarProperty Name="Place_number" ColumnName="Place_number" />
+          <ScalarProperty Name="Row_number" ColumnName="Row_number" />
+          <ScalarProperty Name="Ticket" ColumnName="Ticket" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPursheDetails" FunctionName="Хранилище CinemaModel.GetPursheDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CinemaModel.GetPursheDetails_Result">
+          <ScalarProperty Name="Purchase_id" ColumnName="Purchase_id" />
+          <ScalarProperty Name="Purchase_date" ColumnName="Purchase_date" />
+          <ScalarProperty Name="Session_time" ColumnName="Session_time" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Hall" ColumnName="Hall" />
+          <ScalarProperty Name="Place_number" ColumnName="Place_number" />
+          <ScalarProperty Name="Row_number" ColumnName="Row_number" />
+          <ScalarProperty Name="Film_name" ColumnName="Film_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="IsTicketsOnSessionBought" FunctionName="Хранилище CinemaModel.IsTicketsOnSessionBought">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CinemaModel.IsTicketsOnSessionBought_Result">
+          <ScalarProperty Name="Ticket_id" ColumnName="Ticket_id" />
+          <ScalarProperty Name="Session" ColumnName="Session" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="Purchase" ColumnName="Purchase" />
+          <ScalarProperty Name="Ticket" ColumnName="Ticket" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
