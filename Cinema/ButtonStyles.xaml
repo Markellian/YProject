@@ -67,7 +67,7 @@
         <Setter Property="Foreground" Value="{StaticResource CinemaRed}"/>
         <Setter Property="BorderBrush" Value="{StaticResource CinemaRed}"/>
         <Setter Property="BorderThickness" Value="2"/>
-        <Setter Property="Padding" Value="5,5"/>
+        <Setter Property="Padding" Value="5,1"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="CaretBrush" Value="{StaticResource CinemaRed}"/>
         <Setter Property="SelectionBrush" Value="{StaticResource CinemaGold}"/>

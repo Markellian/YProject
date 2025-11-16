@@ -8,7 +8,14 @@
         Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
     <Window.Resources>
         <DataTemplate x:Key="BuyButton">
-            <Button Content="Купить" Width="100" Height="20" Click="GoToChoosePlacesGrid"/>
+            <Button Content="Купить" 
+            Width="80" 
+            Height="30" 
+            Padding="5,2"
+            FontSize="11"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="GoToChoosePlacesGrid"/>
         </DataTemplate>
     </Window.Resources>
     <Grid>
@@ -69,7 +76,7 @@
             <DatePicker Name="DateSessionDataPicker" SelectedDateChanged="DatePicker_SelectedDateChanged" HorizontalAlignment="Left" Margin="163,273,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.397,0.466"/>
         </Grid>
 
-        <Grid x:Name="PlacesGrid"  Visibility="Hidden" Margin="0,0,-0.4,0" Background="Black">
+        <Grid x:Name="PlacesGrid"  Visibility="Hidden" Background="Black" Height="434" VerticalAlignment="Top">
             <Label Content="Выбранные билеты:" Style="{StaticResource CinemaLabel}" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="513,10,0,0" VerticalAlignment="Top" Height="37" Width="200"/>
             <ScrollViewer Margin="513,47,81,103">
                 <TextBlock FontSize="18" Foreground="White" x:Name="ListChoosedPlacesTextBlock" TextWrapping="Wrap"/>
@@ -77,7 +84,7 @@
             <Label x:Name="AmountLabel" Style="{StaticResource CinemaLabel}" Content="0" HorizontalContentAlignment="Left" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="586,322,0,0" VerticalAlignment="Top" Width="109"/>
             <Label Content="Сумма:" Style="{StaticResource CinemaLabel}" Foreground="White" FontSize="18" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="513,322,0,0" VerticalAlignment="Top" Width="68"/>
             <Button Content="Назад" Style="{StaticResource CinemaButton}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="66" Click="GoToFilmInformationFromChoosePlaces"/>
-            <Button Content="Купить" Style="{StaticResource CinemaButton}" FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="328,385,0,0" VerticalAlignment="Top" Width="125" Height="39" Click="GoToPayTickets"/>
+            <Button Content="Купить" Style="{StaticResource CinemaButton}" FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="328,371,0,24" Width="125" Click="GoToPayTickets"/>
 
         </Grid>
         <Grid x:Name="AuthGrid" Style="{StaticResource CinemaBackgroundGrid}" Visibility="Hidden" IsVisibleChanged="AuthGrid_IsVisibleChanged">
@@ -109,19 +116,19 @@
         </Grid>
         <Grid x:Name="PayGrid" Style="{StaticResource CinemaBackgroundGrid}" Visibility="Hidden" IsVisibleChanged="PayGrid_IsVisibleChanged">
             <TextBlock Text="Оплата" FontSize="40" HorizontalAlignment="Left" Margin="309,21,0,0" VerticalAlignment="Top"/>
-            <TextBox Name="PayNumberCardTextBox1" TextChanged="PayNumberCardTextBox1_TextChanged" HorizontalAlignment="Left" MaxLength="4" FontSize="18" Height="24" Margin="325,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
-            <TextBox Name="PayNumberCardTextBox2" TextChanged="PayNumberCardTextBox1_TextChanged" HorizontalAlignment="Left" MaxLength="4" FontSize="18" Height="24" Margin="381,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
-            <TextBox Name="PayNumberCardTextBox3" TextChanged="PayNumberCardTextBox1_TextChanged" HorizontalAlignment="Left" MaxLength="4" FontSize="18" Height="24" Margin="437,133,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
-            <TextBox Name="PayNumberCardTextBox4" HorizontalAlignment="Left" MaxLength="4" FontSize="18" Height="24" Margin="493,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
+            <TextBox Name="PayNumberCardTextBox1" TextChanged="PayNumberCardTextBox1_TextChanged" HorizontalAlignment="Left" MaxLength="4" FontSize="18" Height="28" Margin="325,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="59"/>
+            <TextBox Name="PayNumberCardTextBox2" TextChanged="PayNumberCardTextBox1_TextChanged" HorizontalAlignment="Left" MaxLength="4" FontSize="18" Height="28" Margin="389,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="59"/>
+            <TextBox Name="PayNumberCardTextBox3" TextChanged="PayNumberCardTextBox1_TextChanged" HorizontalAlignment="Left" MaxLength="4" FontSize="18" Height="28" Margin="453,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="59"/>
+            <TextBox Name="PayNumberCardTextBox4" HorizontalAlignment="Left" MaxLength="4" FontSize="18" Height="28" Margin="517,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="59"/>
             <Label Content="Номер карты:" Style="{StaticResource CinemaLabel}" FontSize="18" HorizontalAlignment="Left" Margin="228,129,0,0" VerticalAlignment="Top"/>
             <Label Content="ММ/ГГ:" Style="{StaticResource CinemaLabel}" FontSize="18" HorizontalAlignment="Left" Margin="271,170,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="PayMonthCardTextBox" HorizontalAlignment="Left" MaxLength="2" FontSize="18" Height="24" Margin="325,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="30"/>
-            <Label Content="/" Style="{StaticResource CinemaLabel}" FontSize="18" HorizontalAlignment="Left" Margin="360,168,0,0" VerticalAlignment="Top" Height="34" Width="7" RenderTransformOrigin="1.062,0.494"/>
-            <TextBox x:Name="PayYearCardTextBox" HorizontalAlignment="Left" MaxLength="2" FontSize="18" Height="24" Margin="372,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="30"/>
+            <TextBox x:Name="PayMonthCardTextBox" HorizontalAlignment="Left" MaxLength="2" FontSize="18" Height="28" Margin="325,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="39"/>
+            <Label Content="/" Style="{StaticResource CinemaLabel}" FontSize="18" HorizontalAlignment="Left" Margin="365,171,0,0" VerticalAlignment="Top" Height="34" Width="7" RenderTransformOrigin="1.062,0.494"/>
+            <TextBox x:Name="PayYearCardTextBox" HorizontalAlignment="Left" MaxLength="2" FontSize="18" Height="28" Margin="372,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="39"/>
             <TextBox x:Name="PayUserCardTextBox" HorizontalAlignment="Left" Height="29" FontSize="18" Margin="325,207,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148"/>
             <Label Content="Владелец карты:" Style="{StaticResource CinemaLabel}" FontSize="18" HorizontalAlignment="Left" Margin="210,206,0,0" VerticalAlignment="Top"/>
             <Label Content="CVC2:" Style="{StaticResource CinemaLabel}" FontSize="18" HorizontalAlignment="Left" Margin="283,242,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="PayCVC2CardTextBox" HorizontalAlignment="Left" MaxLength="3" FontSize="18" Height="29" Margin="325,246,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="40"/>
+            <TextBox x:Name="PayCVC2CardTextBox" HorizontalAlignment="Left" MaxLength="3" FontSize="18" Height="29" Margin="325,246,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="52"/>
             <Button Content="Назад" Style="{StaticResource CinemaButton}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="FromPayToMenu"/>
             <Button Content="Оплатить" Style="{StaticResource CinemaButton}" HorizontalAlignment="Left" Margin="309,328,0,0" VerticalAlignment="Top" Width="75" Click="PayTickets"/>
 
